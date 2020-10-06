@@ -1,0 +1,18 @@
+nav {
+  display: flex; 
+  justify-content: space-between;
+  align-items: center;
+  height: 120px; 
+  width: 100%; 
+  color: #ffffff;
+  background-color: #4056A1;
+
+}
+
+.logo {
+  font-family: 'Bungee', cursive;
+}
+
+nav span {
+  margin: 1.5em; 
+}
