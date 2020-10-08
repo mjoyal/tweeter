@@ -33,6 +33,9 @@
   resize: none;   
 }
 
+.new-tweet h2 {
+  margin: 1em 0; 
+}
 
 label[for=tweet-text] {
 font-weight: 600;

@@ -12,8 +12,18 @@ nav {
 
 .logo {
   font-family: 'Bungee', cursive;
+  margin: 1.5em; 
 }
 
-nav span {
+nav div {
+  display: flex; 
+  flex-direction: column; 
   margin: 1.5em; 
+  /* border: 2px solid red;  */
+}
+
+.fa-angle-double-down {
+  color: red; 
+  /* border: 2px solid white;  */
+  margin-left: 50%; 
 }

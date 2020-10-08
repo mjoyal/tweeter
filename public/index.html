@@ -2,6 +2,8 @@
 <html lang="en">
   <head>
     <!-- Meta Information -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tweeter - Home Page</title>
 
     <!-- External CSS -->
@@ -27,7 +29,10 @@
     <!-- Top nav bar (fixed) -->
     <nav>
       <span class="logo">tweeter</span>
-      <span><b>Write</b> a new tweet</span>
+      <div id="nav-button">
+        <span><b>Write</b> a new tweet</span>
+        <i class="fas fa-angle-double-down"></i>
+      </div>
     </nav>
     <header class="main-header">
       <div>
@@ -40,6 +45,7 @@
     </header>
     <!-- Page-specific (main) content here -->
     <main class="container">
+    
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
         <form id="tweet-form"> <!--action="/tweets" method="POST"  -->

@@ -16,18 +16,25 @@ $(document).ready(function () {
   });
  }; 
  fetchTweets(); 
+
+ const escape =  function(str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+  }
+
   const createTweetElement = function (data) {
     const $tweet = $(`<article>
       <header>
         <div class="user-tweet-info">
-          <img src=${data.user.avatars} alt="Profile Avatar">
-          <p>${data.user.name}</p>
+          <img src=${escape(data.user.avatars)} alt="Profile Avatar">
+          <p>${escape(data.user.name)}</p>
         </div>
-        <p class="tweet-username">${data.user.handle}</p>
+        <p class="tweet-username">${escape(data.user.handle)}</p>
       </header>
-      <p class="old-tweet-text">${data.content.text}</p>
+      <p class="old-tweet-text">${escape(data.content.text)}</p>
       <footer>
-        <p>${data.created_at}</p>
+        <p>${escape(data.created_at)}</p>
         <div>
           <span> <i class="fa fa-flag" aria-hidden="true"></i> </span>
           <span> <i class="fa fa-retweet" aria-hidden="true"></i> </span>
@@ -80,3 +87,29 @@ $(document).ready(function () {
 
 
 
+
+
+
+
+
+// const createTweetElement = function (data) {
+//   const $tweet = $(`<article>
+//     <header>
+//       <div class="user-tweet-info">
+//         <img src=${data.user.avatars} alt="Profile Avatar">
+//         <p>${data.user.name}</p>
+//       </div>
+//       <p class="tweet-username">${data.user.handle}</p>
+//     </header>
+//     <p class="old-tweet-text">${data.content.text}</p>
+//     <footer>
+//       <p>${data.created_at}</p>
+//       <div>
+//         <span> <i class="fa fa-flag" aria-hidden="true"></i> </span>
+//         <span> <i class="fa fa-retweet" aria-hidden="true"></i> </span>
+//         <span> <i class="fa fa-heart" aria-hidden="true"></i> </span>
+//       </div>
+//     </footer>
+//   </article>`);
+//   return $tweet; 
+// };
