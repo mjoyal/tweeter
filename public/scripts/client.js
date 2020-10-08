@@ -48,14 +48,30 @@ $(document).ready(function () {
     }
   };  
 
+  const formValidation = () => {
+    const $textValue = $('#tweet-text').val(); 
+    if($textValue === "") {
+      return 1; 
+    } else if ($textValue.length > 140) {
+      return 2; 
+    }
+    return false; 
+  }; 
 
   $('#tweet-form').submit(function (event) {
     event.preventDefault(); 
-    const serializedData = $(this).serialize(); 
+    const formValid = formValidation();
+    if(!formValid) {
+      const serializedData = $(this).serialize(); 
       $.post('/tweets', serializedData)
         .then((response) => {
           fetchTweets(); 
       })
+    } else if (formValid === 1) {
+      alert('Please enter a tweet.'); 
+    } else {
+      alert('Tweets cannot be longer than 140 characters.'); 
+    }
   })
 
 
