@@ -7,10 +7,10 @@
 /* source sans pro 300, 700 & italic---- font-family: 'Source Sans Pro', sans-serif; */
 /* Bungee 400 (asks for 300, but bungee comes in only 400) ---- font-family: 'Bungee', cursive; */
 
-
 html {
   box-sizing: border-box;
 }
+
 *, *:before, *:after {
   box-sizing: inherit;
 }

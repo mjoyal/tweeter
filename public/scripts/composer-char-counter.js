@@ -1,6 +1,5 @@
 $(document).ready(function() {
-  // --- our code goes here ---
-  $('#tweet-text').keydown( function (event) {
+  $('#tweet-text').on("input", function (event) {
     const tweetVal = $(this).val()
     const counter = $(this).siblings('div').children('.counter'); 
     counter.text(140 - tweetVal.length);
