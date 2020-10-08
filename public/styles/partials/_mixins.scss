@@ -1,19 +1,20 @@
-@mixin flex($direction: column, $justify: space-between, $align: stretch) {
+@mixin flex($direction: column, $justify: center, $align: center) {
   display: flex;
   flex-direction: $direction;
   justify-content: $justify;
   align-items: $align;
 }
 
-@mixin grid($columns: 1fr 1fr, $gap: 0.5em) {
+@mixin grid($columns: 1fr 1fr, $rGap: 0, $cGap: 0) {
   display: grid;
   grid-template-columns: $columns;
-  grid-gap: $gap;
+  grid-row-gap: $rGap;
+  grid-column-gap: $cGap; 
 }
 
 @mixin spacing(
   $vertical-m: 0,
-  $horizontal-m: 1.25em,
+  $horizontal-m: 5%,
   $vertical-p: 0,
   $horizonal-p: 0
 ) {

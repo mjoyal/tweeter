@@ -1,4 +1,5 @@
 @import 'partials/_variables'; 
+@import 'partials/_mixins'; 
 
 #error-message {
   border: 4px solid $error-color;

@@ -1,3 +1,6 @@
+@import 'partials/_variables'; 
+@import 'partials/_mixins'; 
+
 .new-tweet form {
   display: flex; 
   flex-direction: column; 

@@ -1,3 +1,6 @@
+@import 'partials/_variables'; 
+@import 'partials/_mixins'; 
+
 article {
   margin: 1.5em 0; 
   border: $border; 

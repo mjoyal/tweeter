@@ -3,8 +3,6 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
-/* source sans pro 300, 700 & italic---- font-family: 'Source Sans Pro', sans-serif; */
-/* Bungee 400 (asks for 300, but bungee comes in only 400) ---- font-family: 'Bungee', cursive; */
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -25,14 +23,30 @@ body {
   background-color: #f4f1ec;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 300;
-  font-size: 24px;
+  font-size: 1.5rem;
+}
+
+main {
+  margin: auto;
+  width: 90%;
+}
+
+/*Desktop */
+@media only screen and (min-width: 768px) {
+  body {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    grid-row-gap: 0;
+    grid-column-gap: 0;
+  }
+  main {
+    margin: 8em 10%;
+  }
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
-main {
-  margin: auto;
-  width: 90%;
-}
 /*# sourceMappingURL=layout.css.map */
