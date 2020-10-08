@@ -65,19 +65,42 @@ $(document).ready(function () {
     return false; 
   }; 
 
+  const errorMessage = (message) => {
+    const $errorContainer = $('#error-message');
+    $errorContainer.empty(); 
+    const $error = $(`<p>
+    <i class="fas fa-skull-crossbones"></i>
+    ${escape(message)}
+    <i class="fas fa-skull-crossbones"></i>
+    </p>`); 
+    $errorContainer.append($error); 
+  }; 
+
+  const errorStatus = function (error) {
+    if(error) {
+      $('#error-message').slideDown(); 
+    } else {
+      $('#error-message').slideUp(); 
+    }
+  }; 
+
   $('#tweet-form').submit(function (event) {
     event.preventDefault(); 
     const formValid = formValidation();
     if(!formValid) {
+      errorStatus(false); 
       const serializedData = $(this).serialize(); 
       $.post('/tweets', serializedData)
         .then((response) => {
           fetchTweets(); 
       })
+      $('#tweet-text').val(''); 
     } else if (formValid === 1) {
-      alert('Please enter a tweet.'); 
+      errorMessage('Please enter a tweet. #yaboring'); 
+      errorStatus(true); 
     } else {
-      alert('Tweets cannot be longer than 140 characters.'); 
+      errorMessage('Tweets cannot be longer than 140 characters. #wecountedforyou #commondude'); 
+      errorStatus(true); 
     }
   })
 

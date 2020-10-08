@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,cAAc,CAAC;EACb,MAAM,EAAE,GAAG,CAAC,KAAK,CCCL,GAAG;EDAf,KAAK,ECAO,GAAG;EDCf,OAAO,EAAE,KAAK;EACd,MAAM,EAAE,QAAQ;EAChB,OAAO,EAAE,IAAI;CACd",
+    "sources": [
+        "error.scss",
+        "partials/_variables.scss"
+    ],
+    "names": [],
+    "file": "error.css"
+}

@@ -1,0 +1,9 @@
+@import 'partials/_variables'; 
+
+#error-message {
+  border: 4px solid $error-color;
+  color: $error-color;
+  padding: 0.5em;
+  margin: 1.25em 0;
+  display: none; 
+}

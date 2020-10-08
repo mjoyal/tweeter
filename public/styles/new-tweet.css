@@ -1,42 +1,52 @@
 .new-tweet form {
-  display: flex; 
-  flex-direction: column; 
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
+
 .new-tweet div {
-  display: flex; 
-  justify-content: space-between;
-  margin-top: 0.5em; 
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 0.5em;
 }
 
 .new-tweet div button {
   background-color: #4056A1;
   border: none;
-  padding: 0.35em; 
+  padding: 0.35em;
   color: #fff;
   font-family: 'Bungee', cursive;
-  font-size: 18px; 
-  cursor: pointer; 
- }
+  font-size: 18px;
+  cursor: pointer;
+}
 
- .counter {
+.counter {
   font-family: 'Bungee', cursive;
-  font-size: 18px; 
- }
-
+  font-size: 18px;
+}
 
 #tweet-text {
-  border: none; 
-  border-bottom: 4px solid #545149; 
+  border: none;
+  border-bottom: 4px solid #545149;
   background-color: #f4f1ec;
-  color: #4056A1; 
-  height: 1.5em; 
-  resize: none;   
+  color: #4056A1;
+  height: 1.5em;
+  resize: none;
 }
 
 .new-tweet h2 {
-  margin: 1em 0; 
+  margin: 1em 0;
 }
 
 label[for=tweet-text] {
-font-weight: 600;
+  font-weight: 600;
 }
+/*# sourceMappingURL=new-tweet.css.map */
