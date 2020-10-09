@@ -13,3 +13,9 @@ Tweeter is a simple, single-page Twitter clone. Tweeter uses jQuery, AJAX, HTML5
 
 - Express
 - Node 5.10.x or above
+
+## Screenshots
+
+!['Desktop view of Tweeter'](https://github.com/mjoyal/tweeter/blob/master/docs/tweeter-desktop-view.png?raw=true)
+!['Tablet view of Tweeter'](https://github.com/mjoyal/tweeter/blob/master/docs/tweeter-tablet-view.png?raw=true)
+!['Here is the hover state of an individual tweet post'](https://github.com/mjoyal/tweeter/blob/master/docs/tweet-hover-state.png?raw=true)
