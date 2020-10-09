@@ -4,14 +4,14 @@
 // ITS THE GRID MACKENZIE 
 nav {
   @include grid(); 
-  color: white;
+  background-image: url("https://www.transparenttextures.com/patterns/food.png");
   background-color: $secondary-color;
+  color: white;
   overflow: hidden;
+  padding: 2rem 1rem;
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 2rem 1rem;
-  background-image: url("https://www.transparenttextures.com/patterns/food.png");
   .profile {
     @include flex(column, center, center);
     grid-area: 2 / 1 / 2 / 3; 
@@ -32,14 +32,13 @@ nav {
 }
 
 .fa-angle-double-down {
-  color: red;
-  margin-top: 10px;  
   animation: slide-top 1.5s ease-out infinite alternate both;
+  color: red;
   cursor: pointer;  
+  margin-top: 10px;  
   &:hover {
     color: $secondary-color; 
   }
-
 }
 
  @-webkit-keyframes slide-top {
@@ -67,11 +66,11 @@ nav {
   nav {
     @include flex(row, space-between, center); 
     background-color: $main-color;
-    position: fixed;
-    top: 0;
+    background-image: none; 
     height: 7rem;
     padding: 1rem 3rem; 
-    background-image: none; 
+    position: fixed;
+    top: 0;
     .profile {
       display: none;
     }

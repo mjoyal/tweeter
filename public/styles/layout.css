@@ -19,16 +19,16 @@ html {
   * Global layout stuff
   */
 body {
-  color: #545149;
   background-color: #f4f1ec;
+  color: #545149;
   font-family: "Source Sans Pro", sans-serif;
-  font-weight: 300;
   font-size: 1.5rem;
+  font-weight: 300;
 }
 
 main {
-  width: 90%;
   margin: 20rem auto;
+  width: 90%;
 }
 
 @media only screen and (min-width: 768px) {

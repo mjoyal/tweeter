@@ -7,12 +7,12 @@
 
 @media only screen and (min-width: 768px) {
   .main-header {
-    display: grid;
     background-color: $secondary-color;
     background-image: url("https://www.transparenttextures.com/patterns/food.png");
+    display: grid;
+    height: 30rem;
     margin: 10rem 5rem;
     padding: 5rem;
-    height: 30rem;
     .profile {
       @include flex(column, center, center); 
       h2 {

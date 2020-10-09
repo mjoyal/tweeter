@@ -4,13 +4,13 @@
 
 @media only screen and (min-width: 768px) {
   .main-header {
-    display: -ms-grid;
-    display: grid;
     background-color: #a4f9c8;
     background-image: url("https://www.transparenttextures.com/patterns/food.png");
+    display: -ms-grid;
+    display: grid;
+    height: 30rem;
     margin: 10rem 5rem;
     padding: 5rem;
-    height: 30rem;
   }
   .main-header .profile {
     display: -webkit-box;

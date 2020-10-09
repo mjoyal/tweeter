@@ -4,49 +4,59 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-$(document).ready(function () {
+$(document).ready(function() {
 
- const fetchTweets = () => {
-  $.ajax({
-    url: '/tweets', 
-    method: 'GET', 
-    dataType: 'json', 
-    success: (posts) => {renderTweet(posts)}, 
-    error: (error) => {console.error(error)}
-  });
- }; 
- fetchTweets(); 
+  const fetchTweets = () => {
+    $.ajax({
+      url: '/tweets',
+      method: 'GET',
+      dataType: 'json',
+      success: (posts) => {
+        renderTweet(posts);
+      },
+      error: (error) => {
+        console.error(error);
+      }
+    });
+  };
+  fetchTweets();
 
- const escape =  function(str) {
-  let div = document.createElement('div');
-  div.appendChild(document.createTextNode(str));
-  return div.innerHTML;
-  }
+  const escape =  function(str) {
+    let div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
 
   const timeElapsed = (timestamp) => {
-    const second = 1000; 
-    const minute = second * 60; 
-    const hour = minute * 60; 
-    const day = hour * 24; 
+    const second = 1000;
+    const minute = second * 60;
+    const hour = minute * 60;
+    const day = hour * 24;
     const month = day * 30;
-    const year = month * 12; 
+    const year = month * 12;
 
-    const now = Date.now(); 
-    let elapsed = (now - timestamp); // this is now in seconds 
-    console.log('now:', now); 
-    console.log('timestamp:', timestamp); 
-    console.log('elapsed', elapsed); 
+    const now = Date.now();
+    let elapsed = (now - timestamp); // this is now in seconds
+    if (elapsed <= minute) {
+      return `a few seconds ago... `;
+    }
+    if (elapsed <= hour) {
+      return `${Math.round(elapsed / minute)} minute(s) ago`;
+    }
+    if (elapsed <= day) {
+      return `${Math.round(elapsed / hour)} hour(s) ago`;
+    }
+    if (elapsed <= month) {
+      return `${Math.round(elapsed / day)} day(s) ago`;
+    }
+    if (elapsed <= year) {
+      return `${Math.round(elapsed / month)} month(s) ago`;
+    }
+    return `${Math.round(elapsed / year)} year(s) ago`;
+  };
 
-    if (elapsed <= minute) { return `a few seconds ago... `}
-    if (elapsed <= hour) { return `${Math.round(elapsed / minute)} minute(s) ago`}
-    if (elapsed <= day) { return `${Math.round(elapsed / hour)} hour(s) ago`}
-    if (elapsed <= month) { return `${Math.round(elapsed / day)} day(s) ago`}
-    if (elapsed <= year) { return `${Math.round(elapsed / month)} month(s) ago`}
-    return `${Math.round(elapsed / year)} year(s) ago`
-  }; 
 
-
-  const createTweetElement = function (data) {
+  const createTweetElement = function(data) {
     const date = escape(data.created_at);
     const $tweet = $(`<article>
       <header>
@@ -66,68 +76,66 @@ $(document).ready(function () {
         </div>
       </footer>
     </article>`);
-    return $tweet; 
+    return $tweet;
   };
 
-  const renderTweet = function (tweets) {
-    const $tweetContainer = $('#tweets-container'); 
-    $tweetContainer.empty(); 
-    for(const tweet of tweets) {
+  const renderTweet = function(tweets) {
+    const $tweetContainer = $('#tweets-container');
+    $tweetContainer.empty();
+    for (const tweet of tweets) {
       const $tweet = createTweetElement(tweet);
-      $($tweetContainer).prepend($tweet); 
+      $($tweetContainer).prepend($tweet);
 
     }
-  };  
+  };
 
   const formValidation = () => {
-    const $textValue = $('#tweet-text').val(); 
-    if($textValue === "") {
-      return 1; 
+    const $textValue = $('#tweet-text').val();
+    if ($textValue === "") {
+      return 1;
     } else if ($textValue.length > 140) {
-      return 2; 
+      return 2;
     }
-    return false; 
-  }; 
+    return false;
+  };
 
   const errorMessage = (message) => {
     const $errorContainer = $('#error-message');
-    $errorContainer.empty(); 
+    $errorContainer.empty();
     const $error = $(`<p>
     <i class="fas fa-skull-crossbones"></i>
     ${escape(message)}
     <i class="fas fa-skull-crossbones"></i>
-    </p>`); 
-    $errorContainer.append($error); 
-  }; 
+    </p>`);
+    $errorContainer.append($error);
+  };
 
-  const errorStatus = function (error) {
-    if(error) {
-      $('#error-message').slideDown(); 
+  const errorStatus = function(error) {
+    if (error) {
+      $('#error-message').slideDown();
     } else {
-      $('#error-message').slideUp(); 
+      $('#error-message').slideUp();
     }
-  }; 
+  };
 
-  $('#tweet-form').submit(function (event) {
-    event.preventDefault(); 
+  $('#tweet-form').submit(function(event) {
+    event.preventDefault();
     const formValid = formValidation();
-    if(!formValid) {
-      errorStatus(false); 
-      const serializedData = $(this).serialize(); 
+    if (!formValid) {
+      errorStatus(false);
+      const serializedData = $(this).serialize();
       $.post('/tweets', serializedData)
-        .then((response) => {
-          fetchTweets(); 
-      })
+        .then(() => {
+          fetchTweets();
+        });
       $('#tweet-text').val('');
       $('.counter').html(140);
     } else if (formValid === 1) {
-      errorMessage('Please enter a tweet. #yaboring'); 
-      errorStatus(true); 
+      errorMessage('Please enter a tweet. #yaboring');
+      errorStatus(true);
     } else {
-      errorMessage('Tweets cannot be longer than 140 characters. #wecountedforyou #commondude'); 
-      errorStatus(true); 
+      errorMessage('Tweets cannot be longer than 140 characters. #wecountedforyou #commondude');
+      errorStatus(true);
     }
-  })
-
-
+  });
 });

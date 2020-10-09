@@ -7,8 +7,8 @@
 }
 
 article {
-  margin: 1.5em 0;
   border: $border;
+  margin: 1.5em 0;
 }
 
 article header,
@@ -20,15 +20,15 @@ article footer {
 
 article footer {
   align-items: center;
-  padding: 0.5em 1.25em;
+  border-top: $border;
   font-size: 12px;
   font-weight: 400;
-  border-top: $border;
+  padding: 0.5em 1.25em;
 }
 
 .old-tweet-text {
-  margin: 0.5em 0.75em 1em 0.75em;
   font-weight: 400;
+  margin: 0.5em 0.75em 1em 0.75em;
   word-wrap: break-word;
 }
 
@@ -41,9 +41,9 @@ article:hover {
 }
 
 article:hover .tweet-username {
-  visibility: visible;
-  font-weight: 400;
   color: rgba(197, 203, 227, 1);
+  font-weight: 400;
+  visibility: visible;
 }
 
 .user-tweet-info {
@@ -55,9 +55,9 @@ article:hover .tweet-username {
 }
 
 .fa {
-  margin: 3px; 
   color: $main-color;
   cursor: pointer;  
+  margin: 3px; 
 }
 
 .fa:hover {

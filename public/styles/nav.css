@@ -5,14 +5,14 @@ nav {
       grid-template-columns: 1fr 1fr;
   grid-row-gap: 0;
   grid-column-gap: 0;
-  color: white;
+  background-image: url("https://www.transparenttextures.com/patterns/food.png");
   background-color: #a4f9c8;
+  color: white;
   overflow: hidden;
+  padding: 2rem 1rem;
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 2rem 1rem;
-  background-image: url("https://www.transparenttextures.com/patterns/food.png");
 }
 
 nav .profile {
@@ -62,11 +62,11 @@ nav img {
 }
 
 .fa-angle-double-down {
-  color: red;
-  margin-top: 10px;
   -webkit-animation: slide-top 1.5s ease-out infinite alternate both;
           animation: slide-top 1.5s ease-out infinite alternate both;
+  color: red;
   cursor: pointer;
+  margin-top: 10px;
 }
 
 .fa-angle-double-down:hover {
@@ -111,11 +111,11 @@ nav img {
         -ms-flex-align: center;
             align-items: center;
     background-color: #4056A1;
-    position: fixed;
-    top: 0;
+    background-image: none;
     height: 7rem;
     padding: 1rem 3rem;
-    background-image: none;
+    position: fixed;
+    top: 0;
   }
   nav .profile {
     display: none;

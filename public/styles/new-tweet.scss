@@ -18,11 +18,11 @@
 .new-tweet div button {
   background-color: #4056a1;
   border: none;
-  padding: 0.35em;
   color: #fff;
+  cursor: pointer;
+  padding: 0.35em;
   font-family: "Bungee", cursive;
   font-size: 18px;
-  cursor: pointer;
 }
 
 .counter {
@@ -31,9 +31,9 @@
 }
 
 #tweet-text {
+  background-color: $light-color;
   border: none;
   border-bottom: $border;
-  background-color: $light-color;
   color: $main-color;
   height: 2em;
   resize: none;
