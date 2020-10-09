@@ -11,13 +11,3 @@
   grid-row-gap: $rGap;
   grid-column-gap: $cGap; 
 }
-
-@mixin spacing(
-  $vertical-m: 0,
-  $horizontal-m: 5%,
-  $vertical-p: 0,
-  $horizonal-p: 0
-) {
-  margin: $vertical-m $horizontal-m;
-  padding: $vertical-p $horizonal-p;
-}

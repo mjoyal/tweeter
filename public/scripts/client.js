@@ -94,7 +94,8 @@ $(document).ready(function () {
         .then((response) => {
           fetchTweets(); 
       })
-      $('#tweet-text').val(''); 
+      $('#tweet-text').val('');
+      $('.counter').html(140);
     } else if (formValid === 1) {
       errorMessage('Please enter a tweet. #yaboring'); 
       errorStatus(true); 
@@ -108,31 +109,24 @@ $(document).ready(function () {
 });
 
 
-
-
-
-
-
-
-
-// const createTweetElement = function (data) {
-//   const $tweet = $(`<article>
-//     <header>
-//       <div class="user-tweet-info">
-//         <img src=${data.user.avatars} alt="Profile Avatar">
-//         <p>${data.user.name}</p>
-//       </div>
-//       <p class="tweet-username">${data.user.handle}</p>
-//     </header>
-//     <p class="old-tweet-text">${data.content.text}</p>
-//     <footer>
-//       <p>${data.created_at}</p>
-//       <div>
-//         <span> <i class="fa fa-flag" aria-hidden="true"></i> </span>
-//         <span> <i class="fa fa-retweet" aria-hidden="true"></i> </span>
-//         <span> <i class="fa fa-heart" aria-hidden="true"></i> </span>
-//       </div>
-//     </footer>
-//   </article>`);
-//   return $tweet; 
-// };
+const createTweetElement = function (data) {
+  const $tweet = $(`<article>
+    <header>
+      <div class="user-tweet-info">
+        <img src=${data.user.avatars} alt="Profile Avatar">
+        <p>${data.user.name}</p>
+      </div>
+      <p class="tweet-username">${data.user.handle}</p>
+    </header>
+    <p class="old-tweet-text">${data.content.text}</p>
+    <footer>
+      <p>${data.created_at}</p>
+      <div>
+        <span> <i class="fa fa-flag" aria-hidden="true"></i> </span>
+        <span> <i class="fa fa-retweet" aria-hidden="true"></i> </span>
+        <span> <i class="fa fa-heart" aria-hidden="true"></i> </span>
+      </div>
+    </footer>
+  </article>`);
+  return $tweet; 
+};

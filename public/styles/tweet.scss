@@ -1,29 +1,35 @@
 @import 'partials/_variables'; 
 @import 'partials/_mixins'; 
 
-article {
-  margin: 1.5em 0; 
-  border: $border; 
+
+#tweets-container {
+  margin: 2rem auto;
 }
 
-article header, 
+article {
+  margin: 1.5em 0;
+  border: $border;
+}
+
+article header,
 article footer {
   display: flex;
   justify-content: space-between;
-  margin: 0.5em 0.75em; 
+  margin: 0.5em 0.75em;
 }
 
 article footer {
   align-items: center;
-  padding: 0.5em 1.25em; 
+  padding: 0.5em 1.25em;
   font-size: 12px;
   font-weight: 400;
-  border-top: $border; 
+  border-top: $border;
 }
 
 .old-tweet-text {
-  margin: 0.5em 0.75em 1em 0.75em; 
-  font-weight: 400;  
+  margin: 0.5em 0.75em 1em 0.75em;
+  font-weight: 400;
+  word-wrap: break-word;
 }
 
 .tweet-username {
@@ -31,23 +37,21 @@ article footer {
 }
 
 article:hover {
-  box-shadow: 10px 10px 0px 0px rgba(197,203,227,1);
+  box-shadow: 10px 10px 0px 0px rgba(197, 203, 227, 1);
 }
 
 article:hover .tweet-username {
   visibility: visible;
   font-weight: 400;
-  color: rgba(197,203,227,1); 
+  color: rgba(197, 203, 227, 1);
 }
 
 .user-tweet-info {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  @include flex(row, space-between, center); 
 }
 
 .user-tweet-info img {
-  max-height: 70%; 
+  max-height: 70%;
 }
 
 .fa {

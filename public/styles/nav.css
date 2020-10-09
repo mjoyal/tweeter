@@ -1,31 +1,20 @@
 nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
-  grid-area: 1 / 1 / 1 / 3;
-  height: 120px;
-  width: 100%;
-  color: #ffffff;
-  background-color: #4056A1;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  grid-row-gap: 0;
+  grid-column-gap: 0;
+  color: white;
+  background-color: #a4f9c8;
+  overflow: hidden;
   position: fixed;
   top: 0;
+  width: 100%;
+  padding: 2rem 1rem;
 }
 
-.logo {
-  font-family: 'Bungee', cursive;
-  margin: 1.5em;
-}
-
-nav div {
+nav .profile {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -33,13 +22,47 @@ nav div {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin: 1.5em;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: 2 / 1 / 2 / 3;
+}
+
+nav img {
+  height: 5em;
+  width: 5em;
+}
+
+.nav-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: auto;
+}
+
+.logo {
+  font-family: 'Bungee', cursive;
 }
 
 .fa-angle-double-down {
   color: red;
   margin-top: 10px;
-  margin-left: 50%;
   -webkit-animation: slide-top 1.5s ease-out infinite alternate both;
           animation: slide-top 1.5s ease-out infinite alternate both;
   cursor: pointer;
@@ -69,6 +92,32 @@ nav div {
   100% {
     -webkit-transform: translateY(-10px);
     transform: translateY(-10px);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background-color: #4056A1;
+    position: fixed;
+    top: 0;
+    height: 7rem;
+    padding: 1rem 3rem;
+  }
+  nav .profile {
+    display: none;
   }
 }
 /*# sourceMappingURL=nav.css.map */

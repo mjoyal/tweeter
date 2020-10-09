@@ -1,27 +1,18 @@
 .main-header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  height: 20rem;
-  max-width: 100%;
-  margin-top: 8em;
-  background-color: #a4f9c8;
-  background-image: url("https://www.transparenttextures.com/patterns/food.png");
-  color: #ffffff;
+  display: none;
 }
 
 @media only screen and (min-width: 768px) {
   .main-header {
+    display: -ms-grid;
+    display: grid;
+    background-color: #a4f9c8;
+    background-image: url("https://www.transparenttextures.com/patterns/food.png");
+    margin: 10rem 5rem;
+    padding: 5rem;
+    height: 30rem;
+  }
+  .main-header .profile {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -35,12 +26,9 @@
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    height: 30rem;
-    margin: 8em 10%;
-    max-width: 550px;
-    background-color: #a4f9c8;
-    background-image: url("https://www.transparenttextures.com/patterns/food.png");
-    color: #ffffff;
+  }
+  .main-header .profile h2 {
+    margin: 1rem;
   }
 }
 /*# sourceMappingURL=header.css.map */

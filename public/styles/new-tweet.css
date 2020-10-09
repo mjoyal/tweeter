@@ -19,17 +19,17 @@
 }
 
 .new-tweet div button {
-  background-color: #4056A1;
+  background-color: #4056a1;
   border: none;
   padding: 0.35em;
   color: #fff;
-  font-family: 'Bungee', cursive;
+  font-family: "Bungee", cursive;
   font-size: 18px;
   cursor: pointer;
 }
 
 .counter {
-  font-family: 'Bungee', cursive;
+  font-family: "Bungee", cursive;
   font-size: 18px;
 }
 
@@ -46,7 +46,7 @@
   margin: 1em 0;
 }
 
-label[for=tweet-text] {
+label[for="tweet-text"] {
   font-weight: 600;
 }
 /*# sourceMappingURL=new-tweet.css.map */

@@ -4,49 +4,43 @@
  * Do not modify these two selectors, please
  */
 
-@import 'partials/_variables'; 
-@import 'partials/_mixins'; 
-
-html {
-  box-sizing: border-box;
-}
-
-*, *:before, *:after {
-  box-sizing: inherit;
-  margin: 0; 
-  padding: 0; 
-}
-
-/*
- * Global layout stuff
- */
-
- body {
-  color: $dark-color;
-  background-color: $light-color;
-  font-family: 'Source Sans Pro', sans-serif;
-  font-weight: 300;
-  font-size: 1.5rem;
-}
-
-main {
-  margin: auto; 
-  width: 90%; 
-}
-
-/*Desktop */
-
-@media only screen and (min-width: 768px) {
+ @import 'partials/_variables'; 
+ @import 'partials/_mixins'; 
+ 
+ html {
+   box-sizing: border-box;
+ }
+ 
+ *, *:before, *:after {
+   box-sizing: inherit;
+   margin: 0; 
+   padding: 0; 
+ }
+ 
+ /*
+  * Global layout stuff
+  */
   body {
-    @include grid();
+    color: #545149;
+    background-color: #f4f1ec;
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 300;
+    font-size: 1.5rem;
   }
   
   main {
-    margin: 8em 10%;
+    width: 90%;
+    margin: 20rem auto;
   }
   
-}
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
-
+  @media only screen and (min-width: 768px) {
+    body {
+      @include grid();
+    }
+    main {
+      margin: 10rem auto;
+    }
+  }
+ /*
+  * Additional CSS can be defined below or in other CSS files, as per instructions
+  */

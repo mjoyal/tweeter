@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
     <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
     <link rel="stylesheet" href="/styles/error.css" type="text/css" />
+
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <!-- External JS -->
@@ -30,25 +31,27 @@
     <!-- Top nav bar (fixed) -->
     <nav>
       <span class="logo">tweeter</span>
-      <div id="nav-button">
+      <div class="nav-button">
         <span><b>Write</b> a new tweet</span>
         <i class="fas fa-angle-double-down"></i>
       </div>
+      <div class="profile">
+        <img src="/images/profile-hex.png"> 
+        <h2>MacKenzie</h2>
+      </div>
     </nav>
     <header class="main-header">
-      <div>
-          <img src="/images/profile-hex.png"> 
-      </div>
-      <br>
-      <div>
-          <h2>Your Name</h2>
+      <div class="profile">
+        <img src="/images/profile-hex.png"> 
+        <h2>Your Name</h2>
       </div>
     </header>
     <!-- Page-specific (main) content here -->
     <main class="container">
       <div id="error-message"></div>
       <section class="new-tweet">
-        <form id="tweet-form"> <!--action="/tweets" method="POST"  -->
+        <form id="tweet-form">
+          <!--action="/tweets" method="POST"  -->
           <label for="tweet-text">Whatcha humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
           <div>
@@ -58,6 +61,7 @@
         </form>
       </section>
       <div id="tweets-container">
+
       </div>
     </main>
   </body>

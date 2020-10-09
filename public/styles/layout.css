@@ -16,22 +16,21 @@ html {
 }
 
 /*
- * Global layout stuff
- */
+  * Global layout stuff
+  */
 body {
   color: #545149;
   background-color: #f4f1ec;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-weight: 300;
   font-size: 1.5rem;
 }
 
 main {
-  margin: auto;
   width: 90%;
+  margin: 20rem auto;
 }
 
-/*Desktop */
 @media only screen and (min-width: 768px) {
   body {
     display: -ms-grid;
@@ -42,11 +41,11 @@ main {
     grid-column-gap: 0;
   }
   main {
-    margin: 8em 10%;
+    margin: 10rem auto;
   }
 }
 
 /*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+  * Additional CSS can be defined below or in other CSS files, as per instructions
+  */
 /*# sourceMappingURL=layout.css.map */
