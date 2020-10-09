@@ -23,7 +23,31 @@ $(document).ready(function () {
   return div.innerHTML;
   }
 
+  const timeElapsed = (timestamp) => {
+    const second = 1000; 
+    const minute = second * 60; 
+    const hour = minute * 60; 
+    const day = hour * 24; 
+    const month = day * 30;
+    const year = month * 12; 
+
+    const now = Date.now(); 
+    let elapsed = (now - timestamp); // this is now in seconds 
+    console.log('now:', now); 
+    console.log('timestamp:', timestamp); 
+    console.log('elapsed', elapsed); 
+
+    if (elapsed <= minute) { return `a few seconds ago... `}
+    if (elapsed <= hour) { return `${Math.round(elapsed / minute)} minute(s) ago`}
+    if (elapsed <= day) { return `${Math.round(elapsed / hour)} hour(s) ago`}
+    if (elapsed <= month) { return `${Math.round(elapsed / day)} day(s) ago`}
+    if (elapsed <= year) { return `${Math.round(elapsed / month)} month(s) ago`}
+    return `${Math.round(elapsed / year)} year(s) ago`
+  }; 
+
+
   const createTweetElement = function (data) {
+    const date = escape(data.created_at);
     const $tweet = $(`<article>
       <header>
         <div class="user-tweet-info">
@@ -34,7 +58,7 @@ $(document).ready(function () {
       </header>
       <p class="old-tweet-text">${escape(data.content.text)}</p>
       <footer>
-        <p>${escape(data.created_at)}</p>
+        <p>${timeElapsed(date)}</p>
         <div>
           <span> <i class="fa fa-flag" aria-hidden="true"></i> </span>
           <span> <i class="fa fa-retweet" aria-hidden="true"></i> </span>
@@ -107,26 +131,3 @@ $(document).ready(function () {
 
 
 });
-
-
-const createTweetElement = function (data) {
-  const $tweet = $(`<article>
-    <header>
-      <div class="user-tweet-info">
-        <img src=${data.user.avatars} alt="Profile Avatar">
-        <p>${data.user.name}</p>
-      </div>
-      <p class="tweet-username">${data.user.handle}</p>
-    </header>
-    <p class="old-tweet-text">${data.content.text}</p>
-    <footer>
-      <p>${data.created_at}</p>
-      <div>
-        <span> <i class="fa fa-flag" aria-hidden="true"></i> </span>
-        <span> <i class="fa fa-retweet" aria-hidden="true"></i> </span>
-        <span> <i class="fa fa-heart" aria-hidden="true"></i> </span>
-      </div>
-    </footer>
-  </article>`);
-  return $tweet; 
-};

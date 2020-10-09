@@ -1,7 +1,3 @@
-
-
-
-
 $(document).ready(function() {
 const countChars = function (event) {
   const $tweetVal = $(this).val()

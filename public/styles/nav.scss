@@ -10,7 +10,8 @@ nav {
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 2rem 1rem; 
+  padding: 2rem 1rem;
+  background-image: url("https://www.transparenttextures.com/patterns/food.png");
   .profile {
     @include flex(column, center, center);
     grid-area: 2 / 1 / 2 / 3; 
@@ -36,8 +37,9 @@ nav {
   animation: slide-top 1.5s ease-out infinite alternate both;
   cursor: pointer;  
   &:hover {
-    transform: scale(1.1);
+    color: $secondary-color; 
   }
+
 }
 
  @-webkit-keyframes slide-top {
@@ -69,6 +71,7 @@ nav {
     top: 0;
     height: 7rem;
     padding: 1rem 3rem; 
+    background-image: none; 
     .profile {
       display: none;
     }

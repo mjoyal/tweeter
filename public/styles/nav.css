@@ -12,6 +12,7 @@ nav {
   top: 0;
   width: 100%;
   padding: 2rem 1rem;
+  background-image: url("https://www.transparenttextures.com/patterns/food.png");
 }
 
 nav .profile {
@@ -69,8 +70,7 @@ nav img {
 }
 
 .fa-angle-double-down:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  color: #a4f9c8;
 }
 
 @-webkit-keyframes slide-top {
@@ -115,6 +115,7 @@ nav img {
     top: 0;
     height: 7rem;
     padding: 1rem 3rem;
+    background-image: none;
   }
   nav .profile {
     display: none;

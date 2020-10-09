@@ -1,6 +1,10 @@
 @import 'partials/_variables'; 
 @import 'partials/_mixins'; 
 
+.new-tweet {
+  display: none; 
+}
+
 .new-tweet form {
  display: flex;
  flex-direction: column;
@@ -31,7 +35,7 @@
   border-bottom: $border;
   background-color: $light-color;
   color: $main-color;
-  height: 1.5em;
+  height: 2em;
   resize: none;
 }
 
